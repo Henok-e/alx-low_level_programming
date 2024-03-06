@@ -7,11 +7,13 @@
   */
 void _puts_recursion(char *s)
 {
-	if (*s == '\0') /* base case */
-	{
-		_putchar('\n');
-		return;
-	}
-	_putchar(*s);
-	_puts_recursion(s + 1);
+    if (*s)
+    {
+        _puts_recursion(s + 1);
+        write(1, s, 1);
+    }
+    else
+    {
+        write(1, "\n", 1);
+    }
 }
